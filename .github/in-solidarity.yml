@@ -1,0 +1,130 @@
+---
+
+defaultMessage: >
+  You might want to consider an alternative to the term "{{match}}".
+
+  {{#if alternatives~}}
+  Please consider using one of the following suggestions instead: {{#each alternatives}}{{#if @index}},
+  {{/if}}"{{this}}"{{/each}}.
+  {{~/if}}
+
+  If the list is insufficient, please reach out to the RISC-V Architecture Review Committee at
+  tech-arch-review@lists.riscv.org.
+
+  To improve the pattern-matching of this checker, please open an issue or pull-request at
+  https://github.com/riscv/friendly-terminology/issues.)
+
+rules:
+  abort:
+    regex:
+      - /\babort\w*\b/gi
+    level: warning
+    alternatives:
+      - user-initiated termination
+      - force quit
+      - cancel
+      - system-initiated termination
+      - fail
+      - close (app, program, connection)
+      - end
+      - halt
+      - hard stop
+      - stop (something you triggered)
+      
+  whitelist:
+    regex:
+      - /\bwhite[\w_-]*list\w*\b/gi
+    level: warning
+    alternatives:
+      - allowlist
+      - allowed<Noun>
+      - <any other verb>
+
+  blacklist:
+    regex:
+      - /\bblack[\w_-]*list\w*\b/gi
+    level: warning
+    alternatives:
+      - denylist
+      - denied<Noun>
+      - <any other verb>
+
+  whitehat:
+    regex:
+      - /\bwhite[\w_-]*hat\w*\b/gi
+    level: warning
+    alternatives:
+      - ethical hacker
+
+  blackhat:
+    regex:
+      - /\bblack[\w_-]*hat\w*\b/gi
+    level: warning
+    alternatives:
+      - unethical hacker
+      - attacker
+
+  cripple:
+    regex:
+      - /\bcrippl\w*\b/gi
+    level: warning
+    alternatives:
+      - impacted
+      - degraded
+      - restricted
+      - immobilized
+
+  master:
+    regex:
+      - /\bmaster\w*\b/gi
+    level: warning
+    alternatives:
+      - main
+      - original
+      - source
+      - control plane
+
+  slave:
+    regex:
+      - /\bslave\w*\b/gi
+    level: warning
+    alternatives:
+      - control plane node
+      - doer
+      - replica
+      - secondary
+      - follower
+      - child
+      - subordinate
+      
+  master-slave:
+    regex:
+      - /\bmaster[\w_-]*slave\w*\b/gi
+    level: warning
+    alternatives:
+      - control plane/control plane node
+      - controller/doer
+      - primary/replica
+      - leader/follower
+      - parent/child
+      - manager/subordinate
+
+  sanity-check:
+    regex:
+      - /\bsanity[\w_-]*check\w*\b/gi
+    level: warning
+    alternatives:
+      - confidence check
+      - coherence check
+      - test
+      - verification
+
+  segregate:
+    regex:
+      - /\bsegregat\w*\b/gi
+    level: warning
+    alternatives:
+      - segement/segmentation
+      - separate/separation
+
+ignoreDefaults: true
