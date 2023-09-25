@@ -4,15 +4,16 @@ defaultMessage: >
   You might want to consider an alternative to the term "{{match}}".
 
   {{#if alternatives~}}
-  Please consider using one of the following suggestions instead: {{#each alternatives}}{{#if @index}},
+  Please consider using one of the following suggestions instead: 
+  {{#each alternatives}}{{#if @index}},
   {{/if}}"{{this}}"{{/each}}.
   {{~/if}}
 
-  If the list is insufficient, please reach out to the RISC-V Architecture Review Committee at
-  tech-arch-review@lists.riscv.org.
+  If the list is insufficient, please reach out to the RISC-V Architecture 
+  Review Committee at tech-arch-review@lists.riscv.org.
 
-  To improve the pattern-matching of this checker, please open an issue or pull-request at
-  https://github.com/riscv/friendly-terminology/issues.)
+  To improve the pattern-matching of this checker, please open an issue or 
+  pull-request at https://github.com/riscv/friendly-terminology/issues.)
 
 rules:
   abort:
@@ -30,7 +31,7 @@ rules:
       - halt
       - hard stop
       - stop (something you triggered)
-      
+
   whitelist:
     regex:
       - /\bwhite[\w_-]*list\w*\b/gi
@@ -96,7 +97,7 @@ rules:
       - follower
       - child
       - subordinate
-      
+
   master-slave:
     regex:
       - /\bmaster[\w_-]*slave\w*\b/gi
