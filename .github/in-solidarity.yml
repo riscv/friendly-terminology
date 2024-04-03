@@ -77,14 +77,14 @@ rules:
 
   master:
     regex:
-      - /\bmaster\w*\b/gi
+      - /\bmaster\w*\b/g
     level: warning
     alternatives:
       - main
       - original
       - source
       - control plane
-
+    
   slave:
     regex:
       - /\bslave\w*\b/gi
