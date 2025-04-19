@@ -128,4 +128,23 @@ rules:
       - segement/segmentation
       - separate/separation
 
+  grandfathered:
+    regex:
+      - /\bgrandfa\w*\b/gi
+    level: warning
+    alternatives:
+      - exempted
+      - excused
+      - preapproved
+      - preauthorized
+      - legacy
+
+  tribe:
+    regex:
+      - /\tribe\w*\b/gi
+    level: warning
+    alternatives:
+      - squad of squads
+      - team
+
 ignoreDefaults: true
