@@ -84,7 +84,7 @@ rules:
       - original
       - source
       - control plane
-    
+
   slave:
     regex:
       - /\bslave\w*\b/gi
